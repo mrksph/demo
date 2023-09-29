@@ -52,6 +52,7 @@
                     <gitFlowConfig>
                         <developmentBranch>master</developmentBranch>
                         <versionTagPrefix>v</versionTagPrefix>
+                        <skipFeatureVersion>true</skipFeatureVersion>
                     </gitFlowConfig>
 
                     <commitMessages>
