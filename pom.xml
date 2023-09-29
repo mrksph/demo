@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>3.0.6</version>
+        <version>3.1.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.mrksph</groupId>
@@ -14,14 +14,25 @@
     <name>demo</name>
     <description>Demo project for Spring Boot</description>
     <properties>
-        <spring-cloud.version>2021.0.4</spring-cloud.version>
-        <java.version>15</java.version>
+        <java.version>19</java.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.9.2</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+            <version>3.1.4</version>
         </dependency>
     </dependencies>
 
@@ -30,6 +41,18 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+
+            <plugin>
+                <groupId>com.amashchenko.maven.plugin</groupId>
+                <artifactId>gitflow-maven-plugin</artifactId>
+                <version>1.20.0</version>
+                <configuration>
+                    <!-- optional configuration -->
+                    <gitFlowConfig>
+                        <developmentBranch>master</developmentBranch>
+                    </gitFlowConfig>
+                </configuration>
             </plugin>
         </plugins>
     </build>
