@@ -51,7 +51,17 @@
                     <!-- optional configuration -->
                     <gitFlowConfig>
                         <developmentBranch>master</developmentBranch>
+                        <versionTagPrefix>v</versionTagPrefix>
                     </gitFlowConfig>
+
+                    <commitMessages>
+                        <!-- since 1.2.1, see Customizing commit messages -->
+                        <featureStartMessage>[Gitflow Plugin] Update versions for feature branch</featureStartMessage>
+                        <featureFinishMessage>[Gitflow Plugin] Update versions for master branch</featureFinishMessage>
+
+                        <releaseStartMessage>[Gitflow Plugin] Update versions for release</releaseStartMessage>
+                        <releaseFinishMessage>[Gitflow Plugin] Update for next development version</releaseFinishMessage>
+                    </commitMessages>
                 </configuration>
             </plugin>
         </plugins>
