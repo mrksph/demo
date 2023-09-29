@@ -48,7 +48,6 @@
                 <artifactId>gitflow-maven-plugin</artifactId>
                 <version>1.20.0</version>
                 <configuration>
-                    <!-- optional configuration -->
                     <gitFlowConfig>
                         <developmentBranch>master</developmentBranch>
                         <versionTagPrefix>v</versionTagPrefix>
