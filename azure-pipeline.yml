@@ -40,24 +40,27 @@ stages:
       - job: Release_Job
         displayName: Release Job
         steps:
-          - task: Maven@4
-            inputs:
-              mavenPomFile: 'pom.xml'
-              mavenOptions: '-Xmx3072m'
-              javaHomeOption: 'JDKVersion'
-              jdkVersionOption: '1.17'
-              jdkArchitectureOption: 'x64'
-              publishJUnitResults: true
-              testResultsFiles: '**/surefire-reports/TEST-*.xml'
-              goals: 'gitflow:release-start gitflow:release-finish -B'
-
-          - task: Maven@4
-            inputs:
-              mavenPomFile: 'pom.xml'
-              mavenOptions: '-Xmx3072m'
-              javaHomeOption: 'JDKVersion'
-              jdkVersionOption: '1.17'
-              jdkArchitectureOption: 'x64'
-              publishJUnitResults: true
-              testResultsFiles: '**/surefire-reports/TEST-*.xml'
-              goals: 'package'
+          - checkout: self
+          - bash: 'git config --global user.name "Azure Pipeline"'
+          - bash: 'git config --list'
+#          - task: Maven@4
+#            inputs:
+#              mavenPomFile: 'pom.xml'
+#              mavenOptions: '-Xmx3072m'
+#              javaHomeOption: 'JDKVersion'
+#              jdkVersionOption: '1.17'
+#              jdkArchitectureOption: 'x64'
+#              publishJUnitResults: true
+#              testResultsFiles: '**/surefire-reports/TEST-*.xml'
+#              goals: 'gitflow:release-start gitflow:release-finish -B -D'
+#
+#          - task: Maven@4
+#            inputs:
+#              mavenPomFile: 'pom.xml'
+#              mavenOptions: '-Xmx3072m'
+#              javaHomeOption: 'JDKVersion'
+#              jdkVersionOption: '1.17'
+#              jdkArchitectureOption: 'x64'
+#              publishJUnitResults: true
+#              testResultsFiles: '**/surefire-reports/TEST-*.xml'
+#              goals: 'package'
