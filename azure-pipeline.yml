@@ -32,10 +32,10 @@ stages:
 
   - stage: Release_Stage
     displayName: Release Stage
-    environment: 'my env'
     jobs:
       - job: Release_Job
         displayName: Release Job
+        environment: 'my env'
         steps:
           - task: Maven@4
             inputs:
