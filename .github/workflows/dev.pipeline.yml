@@ -43,14 +43,14 @@ jobs:
           env:
             GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
-  release_job:
-    needs: build_job
-
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Close version
-        run: mvn -B gitflow:release-start gitflow:release-finish
-
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml
+#  release_job:
+#    needs: build_job
+#
+#    runs-on: ubuntu-latest
+#
+#    steps:
+#      - name: Close version
+#        run: mvn -B gitflow:release-start gitflow:release-finish
+#
+#      - name: Build with Maven
+#        run: mvn -B package --file pom.xml
