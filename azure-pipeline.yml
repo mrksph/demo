@@ -16,7 +16,7 @@ stages:
   - stage: Build_Stage
     displayName: Build Stage
     jobs:
-      - job: Build Job
+      - job: Build_Job
         displayName: Build Job
         steps:
           - task: Maven@4
