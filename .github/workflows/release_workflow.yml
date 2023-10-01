@@ -1,6 +1,11 @@
 name: Release Pipeline
 
-on: 'workflow_dispatch'
+on:
+  workflow_dispatch:
+    inputs:
+      release_version:
+        description: 'Release version'
+
 
 jobs:
   build:
