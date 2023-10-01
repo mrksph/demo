@@ -49,7 +49,7 @@ stages:
               jdkArchitectureOption: 'x64'
               publishJUnitResults: true
               testResultsFiles: '**/surefire-reports/TEST-*.xml'
-              goals: 'gitflow:release-start gitflow:release-finish -B -D'
+              goals: 'gitflow:release-start gitflow:release-finish -B'
 
           - task: Maven@4
             inputs:
