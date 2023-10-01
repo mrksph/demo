@@ -35,7 +35,8 @@ stages:
     jobs:
       - job: Release_Job
         displayName: Release Job
-        environment: 'my env'
+        environment:
+            name: 'my env'
         steps:
           - task: Maven@4
             inputs:
