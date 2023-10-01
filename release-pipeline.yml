@@ -16,6 +16,13 @@ stages:
       - job: Release_Job
         displayName: Release Job
         steps:
+          - checkout: self
+            fetchDepth: 0
+            fetchTags: true
+            persistCredentials: true
+            clean: true
+            displayName: Checkout Code
+
           - task: Maven@4
             inputs:
               mavenPomFile: 'pom.xml'
