@@ -12,10 +12,12 @@ pool:
   vmImage: ubuntu-latest
 
 stages:
-  - stage: Build Stage
+
+  - stage: Build_Stage
+    displayName: Build Stage
     jobs:
       - job: Build Job
-
+        displayName: Build Job
         steps:
           - task: Maven@4
             inputs:
@@ -28,7 +30,11 @@ stages:
               testResultsFiles: '**/surefire-reports/TEST-*.xml'
               goals: 'package'
 
-      - job: Release Job
+  - stage: Release_Stage
+    displayName: Release Stage
+    jobs:
+      - job: Release_Job
+        displayName: Release Job
         steps:
           - task: Maven@4
             inputs:
