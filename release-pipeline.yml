@@ -22,7 +22,9 @@ stages:
             persistCredentials: true
             clean: true
             displayName: Checkout Code
-
+          - bash: |
+              git config --global user.email "markcosta15@hotmail.com"
+              git config --global user.name "Release User - Marcos"
           - task: Maven@4
             inputs:
               mavenPomFile: 'pom.xml'
