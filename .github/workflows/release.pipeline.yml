@@ -7,7 +7,7 @@ on:
         description: 'Release version'
 
 jobs:
-  release_job:
+  build:
 
     runs-on: ubuntu-latest
 
